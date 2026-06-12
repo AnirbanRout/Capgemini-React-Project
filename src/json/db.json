@@ -1,0 +1,117 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Aarav",
+      "email": "aarav@student.com",
+      "password": "1234",
+      "role": "student",
+      "roomNo": "A-101"
+    },
+    {
+      "id": "2",
+      "name": "Diya",
+      "email": "diya@student.com",
+      "password": "1234",
+      "role": "student",
+      "roomNo": "B-204"
+    },
+    {
+      "id": "3",
+      "name": "Warden Meera",
+      "email": "warden@hostel.com",
+      "password": "admin123",
+      "role": "admin",
+      "roomNo": "-"
+    }
+  ],
+  "requests": [
+    {
+      "id": "1",
+      "title": "Fan not working",
+      "description": "Room fan is not rotating properly",
+      "category": "Electrical",
+      "roomNo": "A-101",
+      "studentId": 1,
+      "studentName": "Aarav",
+      "priority": "High",
+      "status": "Open",
+      "createdAt": "2026-06-11"
+    },
+    {
+      "id": "2",
+      "title": "Water leakage",
+      "description": "Leakage in bathroom tap",
+      "category": "Plumbing",
+      "roomNo": "B-204",
+      "studentId": 2,
+      "studentName": "Diya",
+      "priority": "Medium",
+      "status": "In Progress",
+      "createdAt": "2026-06-11"
+    },
+    {
+      "title": "ac not working",
+      "description": "ac not working",
+      "category": "Electrical",
+      "roomNo": "233",
+      "priority": "High",
+      "status": "Open",
+      "createdAt": "2026-06-12T06:28:16.854Z",
+      "id": "HhSAq43jYrM"
+    },
+    {
+      "title": "ddgvs",
+      "description": "dfasd",
+      "category": "Electrical",
+      "roomNo": "asfa",
+      "priority": "Low",
+      "status": "Open",
+      "createdAt": "2026-06-12T06:31:19.565Z",
+      "id": "pegxVBcxkfY"
+    },
+    {
+      "title": "zdfs",
+      "description": "dss",
+      "category": "Electrical",
+      "roomNo": "22",
+      "priority": "Medium",
+      "status": "Open",
+      "createdAt": "2026-06-12T06:40:18.047Z",
+      "id": "kFxcOmtv7DU"
+    },
+    {
+      "title": "fdg",
+      "description": "sfdgszg",
+      "category": "Cleaning",
+      "roomNo": "457",
+      "priority": "Medium",
+      "status": "Open",
+      "createdAt": "2026-06-12T06:52:05.857Z",
+      "id": "OlW_q2zUJGA"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electrical"
+    },
+    {
+      "id": "2",
+      "name": "Plumbing"
+    },
+    {
+      "id": "3",
+      "name": "Cleaning"
+    },
+    {
+      "id": "4",
+      "name": "Furniture"
+    },
+    {
+      "id": "5",
+      "name": "Internet"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
