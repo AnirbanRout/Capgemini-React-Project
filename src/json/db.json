@@ -35,7 +35,7 @@
       "studentId": 1,
       "studentName": "Aarav",
       "priority": "High",
-      "status": "Open",
+      "status": "close",
       "createdAt": "2026-06-11"
     },
     {

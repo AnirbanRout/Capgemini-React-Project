@@ -1,16 +1,29 @@
 import { useState } from "react";
 import FilterBar from "./FilterBar";
 
-const ComplaintList = ({ requests }) => {
+import api from "../services/api";
+
+const ComplaintList = ({ requests, isAdmin, getRequests }) => {
   const [search, setSearch] = useState("");
 
   const filtered_requests = requests.filter((request) =>
     request.title.toLowerCase().includes(search.toLowerCase()),
   );
 
+  const handleClose = (id) => {
+    api
+      .patch(`/requests/${id}`, { status: "close" })
+      .then(() => {
+        getRequests();
+      })
+      .catch((err) => {
+        console.error("Error updating request status:", err);
+      });
+  };
+
   return (
     <div>
-      <h2 className="mb-3">Complaint List</h2>
+      <h2 className="mb-3">{isAdmin ? "All Complaints" : "My Complaints"}</h2>
 
       <FilterBar search={search} setSearch={setSearch} />
 
@@ -39,6 +52,19 @@ const ComplaintList = ({ requests }) => {
               <p>
                 <strong>Status:</strong> {req.status}
               </p>
+
+              {isAdmin && (
+                <div className="mt-2 d-flex gap-2">
+                  <button
+                    className="btn btn-success btn-sm"
+                    onClick={() => handleClose(req.id)}
+                    disabled={req.status === "close"}
+                  >
+                    Update Status
+                  </button>
+                  <button className="btn btn-danger btn-sm">Delete</button>
+                </div>
+              )}
             </div>
           </div>
         ))

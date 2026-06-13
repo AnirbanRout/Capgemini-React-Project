@@ -35,7 +35,7 @@ const Dashboard = () => {
   useEffect(() => {
     getRequests();
     getCategories();
-  }, []);
+  }, [user]);
 
   return (
     <div className="container py-4">
@@ -59,14 +59,10 @@ const Dashboard = () => {
 
         <div className={user.role === "student" ? "col-md-8" : "col-12"}>
           <div className="card shadow-sm p-3">
-            <h5 className="mb-3">
-              {user.role === "admin" ? "All Complaints" : "My Complaints"}
-            </h5>
-
             <ComplaintList
               requests={requests}
               isAdmin={user.role === "admin"}
-              setRequests={setRequests}
+              getRequests={getRequests}
             />
           </div>
         </div>
