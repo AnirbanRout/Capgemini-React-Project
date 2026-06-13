@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import * as Yup from "yup";
 
 import api from "../services/api";
+import { AuthContext } from "../../day2/context/AuthContext";
 
 const ComplaintForm = ({ getRequests }) => {
+  const { user } = useContext(AuthContext);
+
   const validationSchema = Yup.object({
     title: Yup.string().required("Title is required"),
     description: Yup.string().required("Description is required"),
@@ -23,11 +27,11 @@ const ComplaintForm = ({ getRequests }) => {
       }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm }) => {
-        console.log(values);
-
         const newComplaint = {
           ...values,
-          status: "Open",
+          studentId: user.id,
+          studentName: user.name,
+          status: "open",
           createdAt: new Date().toISOString(),
         };
 
@@ -84,6 +88,7 @@ const ComplaintForm = ({ getRequests }) => {
               <option value="Electrical">Electrical</option>
               <option value="Plumbing">Plumbing</option>
               <option value="Cleaning">Cleaning</option>
+              <option value="Furniture">Furniture</option>
               <option value="Internet">Internet</option>
             </Field>
             <ErrorMessage

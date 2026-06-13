@@ -59,56 +59,6 @@
       "status": "Open",
       "createdAt": "2026-06-12T06:28:16.854Z",
       "id": "HhSAq43jYrM"
-    },
-    {
-      "title": "ddgvs",
-      "description": "dfasd",
-      "category": "Electrical",
-      "roomNo": "asfa",
-      "priority": "Low",
-      "status": "Open",
-      "createdAt": "2026-06-12T06:31:19.565Z",
-      "id": "pegxVBcxkfY"
-    },
-    {
-      "title": "zdfs",
-      "description": "dss",
-      "category": "Electrical",
-      "roomNo": "22",
-      "priority": "Medium",
-      "status": "Open",
-      "createdAt": "2026-06-12T06:40:18.047Z",
-      "id": "kFxcOmtv7DU"
-    },
-    {
-      "title": "fdg",
-      "description": "sfdgszg",
-      "category": "Cleaning",
-      "roomNo": "457",
-      "priority": "Medium",
-      "status": "Open",
-      "createdAt": "2026-06-12T06:52:05.857Z",
-      "id": "OlW_q2zUJGA"
-    },
-    {
-      "title": "fcxbg",
-      "description": "fbx",
-      "category": "Plumbing",
-      "roomNo": "333",
-      "priority": "High",
-      "status": "Open",
-      "createdAt": "2026-06-13T01:07:59.233Z",
-      "id": "6Lr1FjrQu_I"
-    },
-    {
-      "title": "ac",
-      "description": "ac not working",
-      "category": "Electrical",
-      "roomNo": "2222",
-      "priority": "High",
-      "status": "Open",
-      "createdAt": "2026-06-13T01:30:25.795Z",
-      "id": "zq_ltRfsgQY"
     }
   ],
   "categories": [
