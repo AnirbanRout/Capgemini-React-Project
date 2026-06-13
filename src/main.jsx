@@ -11,6 +11,7 @@ import ProtectedRoute from "./day2/routes/ProtectedRoute";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import NotFound from "./day2/pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
 
   {
     path: "/",
-    element: <Login />,
+    element: (
+      <ProtectedRoute>
+        <DashBoard />
+      </ProtectedRoute>
+    ),
   },
 
   {
@@ -48,6 +53,16 @@ const router = createBrowserRouter([
         <RequestDetails />
       </ProtectedRoute>
     ),
+  },
+
+  {
+    path: "/404",
+    element: <NotFound />,
+  },
+
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 

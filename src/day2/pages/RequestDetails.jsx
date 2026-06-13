@@ -1,20 +1,28 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import api from "../../day1/services/api";
 
 const RequestDetails = () => {
   const { id } = useParams();
+
   const [request, setRequest] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     api
       .get(`/requests/${id}`)
       .then((res) => setRequest(res.data))
-      .catch((err) => console.error("Error fetching request:", err));
+      .catch(() => setNotFound(true))
+      .finally(() => setLoading(false));
   }, [id]);
 
-  if (!request) {
-    return <div className="container mt-4">Loading...</div>;
+  if (loading) {
+    return <h3 className="text-center mt-5">Loading...</h3>;
+  }
+
+  if (notFound) {
+    return <Navigate to="/404" />;
   }
 
   return (
@@ -25,12 +33,15 @@ const RequestDetails = () => {
         <p>
           <strong>Description:</strong> {request.description}
         </p>
+
         <p>
           <strong>Category:</strong> {request.category}
         </p>
+
         <p>
           <strong>Room No:</strong> {request.roomNo}
         </p>
+
         <p>
           <strong>Priority:</strong> {request.priority}
         </p>
