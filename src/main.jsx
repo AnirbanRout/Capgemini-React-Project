@@ -1,14 +1,16 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { createRoot } from "react-dom/client";
-import { StrictMode } from "react";
 
 import Login from "./day2/pages/Login";
 import DashBoard from "./day1/pages/DashBoard";
+import RequestDetails from "./day2/pages/RequestDetails";
 
-import ProtectedRoute from "./day2/routes/ProtectedRoute";
 import { AuthProvider } from "./day2/context/AuthContext";
+import ProtectedRoute from "./day2/routes/ProtectedRoute";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/admin-dashboard",
     element: (
-      <ProtectedRoute>
+      <ProtectedRoute role="admin">
         <DashBoard />
       </ProtectedRoute>
     ),
@@ -28,23 +30,31 @@ const router = createBrowserRouter([
   {
     path: "/student-dashboard",
     element: (
-      <ProtectedRoute>
+      <ProtectedRoute role="student">
         <DashBoard />
       </ProtectedRoute>
     ),
   },
 
-  // optional default route
   {
     path: "/",
     element: <Login />,
   },
+
+  {
+    path: "/request/:id",
+    element: (
+      <ProtectedRoute>
+        <RequestDetails />
+      </ProtectedRoute>
+    ),
+  },
 ]);
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
-  </StrictMode>,
+  </React.StrictMode>,
 );

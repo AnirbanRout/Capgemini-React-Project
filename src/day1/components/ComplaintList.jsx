@@ -3,6 +3,8 @@ import FilterBar from "./FilterBar";
 
 import api from "../services/api";
 
+import { Link } from "react-router-dom";
+
 const ComplaintList = ({ requests, isAdmin, getRequests }) => {
   const [search, setSearch] = useState("");
 
@@ -62,7 +64,12 @@ const ComplaintList = ({ requests, isAdmin, getRequests }) => {
                   >
                     Update Status
                   </button>
-                  <button className="btn btn-danger btn-sm">Delete</button>
+                  <Link
+                    to={`/request/${req.id}`}
+                    className="btn btn-info btn-sm"
+                  >
+                    View Details
+                  </Link>
                 </div>
               )}
             </div>
