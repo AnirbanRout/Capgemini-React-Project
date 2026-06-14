@@ -3,7 +3,7 @@ import RequestCard from "../../day3/components/RequestCard";
 
 const ComplaintList = ({ requests, isAdmin, getRequests }) => {
   const handleClose = (id) => {
-    api.patch(`/requests/${id}`, { status: "close" }).then(() => {
+    api.patch(`/requests/${id}`, { status: "Resolved" }).then(() => {
       getRequests();
     });
   };
