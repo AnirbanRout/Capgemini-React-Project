@@ -94,6 +94,5 @@
       "id": "5",
       "name": "Internet"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
