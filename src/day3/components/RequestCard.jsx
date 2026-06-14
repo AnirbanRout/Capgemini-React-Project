@@ -38,7 +38,7 @@ const RequestCard = ({ request, isAdmin, handleClose }) => {
             <button
               className="btn btn-success btn-sm"
               onClick={() => handleClose(request.id)}
-              disabled={request.status === "close"}
+              disabled={request.status === "Resolved"}
             >
               Update Status
             </button>
