@@ -3,26 +3,24 @@ import { useMemo } from "react";
 const AdminOverview = ({ requests }) => {
   const totalComplaints = useMemo(() => requests.length, [requests]);
 
-  const openCount = useMemo(
-    () => requests.filter((r) => r.status === "open").length,
-    [requests],
+  const openCount = useMemo(() => requests.filter((req)=>{
+    return req.status === "open";
+  }).length, [requests]
   );
 
-  const inProgressCount = useMemo(
-    () => requests.filter((r) => r.status === "in_progress").length,
-    [requests],
+  const inProgressCount = useMemo(()=> requests.filter((req)=>{
+    return req.status === "in_progress";
+  }).length, [requests]
   );
 
-  const resolvedCount = useMemo(
-    () => requests.filter((r) => r.status === "resolved").length,
-    [requests],
+  const resolvedCount = useMemo(() => requests.filter((req)=>{
+    return req.status === "resolved";
+  }).length, [requests]
   );
 
-  const highPriorityOpenIssues = useMemo(
-    () =>
-      requests.filter((r) => r.status === "open" && r.priority === "high")
-        .length,
-    [requests],
+  const highPriorityOpenIssues = useMemo(()=> requests.filter((req)=>{
+    return req.status === "open" && req.priority === "high";
+  }).length, [requests]
   );
 
   const categoryCounts = useMemo(() => {

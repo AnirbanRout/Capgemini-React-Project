@@ -13,7 +13,7 @@ const useRequestFilters = (
 
     if (search) {
       filtered = filtered.filter((req) =>
-        req.title.toLowerCase().includes(search.toLowerCase()),
+        req.title.toLowerCase().includes(search.toLowerCase())    
       );
     }
 
