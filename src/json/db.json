@@ -35,7 +35,7 @@
       "studentId": 1,
       "studentName": "Aarav",
       "priority": "High",
-      "status": "close",
+      "status": "Open",
       "createdAt": "2026-06-11"
     },
     {
@@ -61,16 +61,16 @@
       "id": "HhSAq43jYrM"
     },
     {
-      "title": "df",
-      "description": "fsa",
-      "category": "Cleaning",
+      "title": "water leakage ",
+      "description": "water leakage problem in kitchen",
+      "category": "Plumbing",
       "roomNo": "A-101",
       "priority": "Medium",
       "studentId": "1",
       "studentName": "Aarav",
-      "status": "open",
-      "createdAt": "2026-06-14T12:03:00.526Z",
-      "id": "ikUTCm0tVHI"
+      "status": "Open",
+      "createdAt": "2026-06-14T14:54:31.019Z",
+      "id": "xUzMwEFpyqs"
     }
   ],
   "categories": [
@@ -94,5 +94,6 @@
       "id": "5",
       "name": "Internet"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

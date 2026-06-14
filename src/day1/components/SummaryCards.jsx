@@ -4,22 +4,22 @@ const SummaryCards = ({ requests }) => {
   const requestCount = useMemo(() => requests.length, [requests]);
 
   const openRequests = useMemo(
-    () => requests.filter((req) => req.status === "open").length,
+    () => requests.filter((req) => req.status === "Open").length,
     [requests],
   );
 
   const inProgressRequests = useMemo(
-    () => requests.filter((req) => req.status === "in_progress").length,
+    () => requests.filter((req) => req.status === "In Progress").length,
     [requests],
   );
 
   const resolvedRequests = useMemo(
-    () => requests.filter((req) => req.status === "resolved").length,
+    () => requests.filter((req) => req.status === "Resolved").length,
     [requests],
   );
 
   const highPriorityRequests = useMemo(
-    () => requests.filter((req) => req.priority === "high").length,
+    () => requests.filter((req) => req.priority === "High").length,
     [requests],
   );
 

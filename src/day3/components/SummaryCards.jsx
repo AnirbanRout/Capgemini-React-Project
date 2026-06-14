@@ -5,13 +5,13 @@ const SummaryCards = ({ requests }) => {
     return {
       total: requests.length,
 
-      open: requests.filter((req) => req.status === "open").length,
+      open: requests.filter((req) => req.status === "Open").length,
 
-      inProgress: requests.filter((req) => req.status === "in_progress").length,
+      inProgress: requests.filter((req) => req.status === "In Progress").length,
 
-      resolved: requests.filter((req) => req.status === "resolved").length,
+      resolved: requests.filter((req) => req.status === "Resolved").length,
 
-      highPriority: requests.filter((req) => req.priority === "high").length,
+      highPriority: requests.filter((req) => req.priority === "High").length,
     };
   }, [requests]);
 
